@@ -25,23 +25,3 @@ def sort_on(characters_dict):
         list_of_dictionaries.append({"char": key, "num": value})
     list_of_dictionaries.sort(key=lambda item: item["num"], reverse=True)
     return list_of_dictionaries
-
-def main():
-    path = "books/frankenstein.txt"
-    file_contents = get_book_text(path)
-    number_of_words = count_words(file_contents)
-    characters_dict = character_counter(file_contents)
-    sorted_list = sort_on(characters_dict)
-    print("============ BOOKBOT ============")
-    print(f"Analyzing book found at {path}...")
-    print("----------- Word Count ----------")
-    print(f"Found {number_of_words} total words")
-    print("--------- Character Count -------")
-    for item in sorted_list:
-        if item["char"].isalpha():
-            print(f"{item['char']}: {item['num']}")
-    print("============= END ===============")
-    # print(characters_dict)
-    # print(sorted_list)
-
-main()
